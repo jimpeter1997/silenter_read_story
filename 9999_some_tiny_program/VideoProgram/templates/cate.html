@@ -25,14 +25,9 @@
         <nav aria-label="" style="width:100%;text-align: center;">
                 <div class="page-item col-6 offset-3">
                   <a class="page-link" href="#" tabindex="-1" aria-disabled="true">总计：{{ context.pageinfo.page_total }}页</a>
-
               </div>
-
               <div class="">
                   <ul class="pagination pagination_95">
-
-
-
                     {% if context.pageinfo.page_activate > 4 %}
                         <li class="page-item ">
                           <a class="page-link " href="{{ url_for('cate', cate_id=context.videos[0].type_id, page=context.pageinfo.page_activate-1) }}" tabindex="-1" aria-disabled="true">上一页</a>
@@ -56,9 +51,6 @@
                             {% endif %}
                         {% endfor %}
                     {% endif %}
-                    <!-- <li class="page-item"><a class="page-link" href="#">{{ context.pageinfo.page_activate -3 }}</a></li>
-                    <li class="page-item"><a class="page-link" href="#">{{ context.pageinfo.page_activate -2 }}</a></li>
-                    <li class="page-item"><a class="page-link" href="#">{{ context.pageinfo.page_activate -1 }}</a></li> -->
 
                     <li class="page-item active" aria-current="page">
                       <a class="page-link" href="#">{{ context.pageinfo.page_activate }}</a>
@@ -67,10 +59,6 @@
                         {% for i in [1,2,3] %}
                                 <li class="page-item"><a class="page-link" href="{{ url_for('cate', cate_id=context.videos[0].type_id, page=context.pageinfo.page_activate + i) }}">{{ context.pageinfo.page_activate + i }}</a></li>
                         {% endfor %}
-
-                        <!-- <li class="page-item"><a class="page-link" href="#">{{ context.pageinfo.page_activate +1 }}</a></li>
-                        <li class="page-item"><a class="page-link" href="#">{{ context.pageinfo.page_activate +2 }}</a></li>
-                        <li class="page-item"><a class="page-link" href="#">{{ context.pageinfo.page_activate +3 }}</a></li> -->
                         {% if context.pageinfo.page_total - context.pageinfo.page_activate != 4 %}
                             <li class="page-item"><a class="page-link" href="#">...</a></li>
                         {% endif %}
@@ -83,21 +71,13 @@
                             {% if context.pageinfo.page_activate + i <= context.pageinfo.page_total %}
                                 <li class="page-item"><a class="page-link" href="{{ url_for('cate', cate_id=context.videos[0].type_id,page=context.pageinfo.page_activate + i) }}">{{ context.pageinfo.page_activate + i }}</a></li>
                             {% endif %}
-
                         {% endfor %}
                         <li class="page-item disabled">
                           <a class="page-link" href="#">下一页</a>
                         </li>
                     {% endif %}
-
-
-
-
-
                   </ul>
               </div>
-
-
         </nav>
 
 

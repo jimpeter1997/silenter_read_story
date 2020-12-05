@@ -20,6 +20,7 @@ db = SQLAlchemy(app)
 pymysql.install_as_MySQLdb()
 
 
+
 class BaseModel(object):
     """模型类的基类，为每个模型补充创建时间和更新时间"""
     # 记录创建的时间
